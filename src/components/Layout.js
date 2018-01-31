@@ -1,6 +1,6 @@
 // This component holds the App layout that is used on every page
 import React, {PropTypes} from 'react';
-import Header from './common/Header'
+import Header from './common/Header';
 
 class Layout extends React.Component {
     render() {
