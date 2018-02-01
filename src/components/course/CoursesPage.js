@@ -21,6 +21,8 @@ class CoursesPage extends React.Component {
     }
 
     onClickSave() {
+        // ReduxFlow 1 Calls the Action creator with the object
+        // debugger;
         this.props.dispatch(courseActions.createCourse(this.state.course));
     }
 
@@ -29,6 +31,8 @@ class CoursesPage extends React.Component {
     }
 
     render() {
+        // Reduxflow 5 render is called to display the changes in the store.
+        // debugger;
         return (
             <div>
                 <h1>Courses</h1>
@@ -54,6 +58,10 @@ CoursesPage.propTypes = {
 };
 
  function mapStateToProps(state, ownProps) {
+     // Reduxflow 4 after being notified by the store, this will update the properties 
+     // that are owned by the container component
+     // this will call the render function in this component.
+     // debugger;
      return {
          courses: state.courses
      };
