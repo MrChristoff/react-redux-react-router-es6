@@ -3,6 +3,7 @@ import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as courseActions from '../../actions/courseActions';
+import CourseList from './CourseList';
 
 /* Constructor 
     - Initialises state
@@ -26,10 +27,12 @@ class CoursesPage extends React.Component {
     */
     render() {
         // Reduxflow 5 render is called to display the changes in the store.
+        const {courses} = this.props;
+        
         return (
             <div>
                 <h1>Courses</h1>
-                {this.props.courses.map(this.courseRow)}
+                <CourseList courses={courses} />
             </div>
         );
     }
