@@ -1,7 +1,9 @@
 // Course Reducer
 import * as types from '../actions/actionTypes';
+import initialState from './initialState';
 
-export default function courseReducer(state = [], action) {
+
+export default function courseReducer(state = initialState.courses, action) {
    switch (action.type) {
       case types.LOAD_COURSES_SUCCESS:
       // ReduxFlow 3 after having the Action pass the state and action to perform
