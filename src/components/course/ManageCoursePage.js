@@ -14,12 +14,24 @@ class ManageCoursePage extends React.Component {
             course: Object.assign({}, this.props.course),
             errors: {}
         };
+
+        this.updateCourseState = this.updateCourseState.bind(this);
     }
+
+    updateCourseState(event) {
+        debugger;
+        const field = event.target.name;
+        let course = Object.assign({}, this.state.course);
+        course[field] = event.target.value;
+        return this.setState({course: course});
+    }
+
 
     render() {
         return (
             <CourseForm 
                 allAuthors={this.props.authors}
+                onChange={this.updateCourseState}
                 course={this.state.course} 
                 errors={this.state.errors} 
             />
@@ -39,7 +51,7 @@ function mapStateToProps(state, ownProps) {
            value: author.id,
            text: author.firstName + ' ' + author.lastName
        };
-   })
+   });
    return {
       course: course,
       authors: authorsFormattedForDropdown
